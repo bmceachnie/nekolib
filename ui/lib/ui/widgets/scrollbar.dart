@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcScrollbar extends StatefulWidget {
   const NcScrollbar({Key? key, required this.child, this.isAlwaysShown = false}) : super(key: key);

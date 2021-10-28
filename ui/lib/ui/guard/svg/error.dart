@@ -1,4 +1,4 @@
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 const error_svg = '''
 

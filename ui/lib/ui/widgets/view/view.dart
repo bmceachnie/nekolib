@@ -1,8 +1,8 @@
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:lb_planner/ui.dart';
-import 'package:lb_planner/ui/widgets/view/svg/notifactions_svg.dart';
+import 'package:nekolib.ui/ui.dart';
+import 'svg/notifactions_svg.dart';
 
 class NcView extends StatefulWidget {
   NcView.route({Key? key, required this.title, this.popRoute, required this.content, this.customRouteName}) : super(key: key) {

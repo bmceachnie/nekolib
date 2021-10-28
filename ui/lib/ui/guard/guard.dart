@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
-import 'package:lb_planner/ui/guard/error_cache_entry.dart';
+import 'package:nekolib.ui/ui.dart';
+import 'error_cache_entry.dart';
 import 'svg/error.dart';
 
 // class NcGuard extends InheritedWidget {

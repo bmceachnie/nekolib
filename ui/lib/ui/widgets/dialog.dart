@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcDialog extends StatelessWidget {
   NcDialog({Key? key, this.title = "", required this.body, this.confirmText = "Confirm", this.cancelText = "Cancel", required this.onConfirm, this.onCancel, this.label, this.buttonWidth = defaultButtonWidth}) : super(key: key) {
@@ -77,7 +77,7 @@ void showNcDialog(
   required Widget body,
   String confirmText = "Confirm",
   String cancelText = "Cancel",
-   Function()? onConfirm,
+  Function()? onConfirm,
   Function()? onCancel,
   Widget? label,
   double buttonWidth = NcDialog.defaultButtonWidth,

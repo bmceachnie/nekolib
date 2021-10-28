@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NcCommingSoon extends StatelessWidget {

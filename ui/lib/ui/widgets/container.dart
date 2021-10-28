@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcContainer extends StatelessWidget {
   NcContainer({

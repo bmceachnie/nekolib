@@ -1,4 +1,4 @@
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 const svg_3 = '''
 <svg xmlns="http://www.w3.org/2000/svg" width="207.61" height="326.707" viewBox="0 0 207.61 326.707">

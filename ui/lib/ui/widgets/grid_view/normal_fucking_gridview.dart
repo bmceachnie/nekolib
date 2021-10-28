@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
-import 'package:lb_planner/ui/widgets/grid_view/svg/nothing_here.dart';
+import 'package:nekolib.ui/ui.dart';
+import 'svg/nothing_here.dart';
 
 class NcGridView extends StatelessWidget {
   NcGridView({

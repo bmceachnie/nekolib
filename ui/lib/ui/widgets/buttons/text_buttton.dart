@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
-import 'package:lb_planner/ui/widgets/text/caption_text.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcTextButton extends StatelessWidget {
   const NcTextButton({Key? key, required this.text, this.trailingIcon, this.leadingIcon, required this.onTap, this.width, this.fontSize}) : super(key: key);

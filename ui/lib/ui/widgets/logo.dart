@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcLogo extends StatelessWidget {
   const NcLogo({Key? key, this.width, this.height, this.aliignment = Alignment.center}) : super(key: key);

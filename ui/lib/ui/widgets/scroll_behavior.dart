@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcScrollBehavior extends ScrollBehavior {
   static const ScrollPhysics physics = const BouncingScrollPhysics();

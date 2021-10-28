@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcDropdown extends StatefulWidget {
   const NcDropdown({Key? key, required this.value, required this.items, this.icon, this.fontSize, required this.onValueChanged, this.height = defaultHeight}) : super(key: key);

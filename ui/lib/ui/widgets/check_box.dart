@@ -1,7 +1,7 @@
 //import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcCheckBox extends StatefulWidget {
   const NcCheckBox({
@@ -57,11 +57,7 @@ class _NcCheckBoxState extends State<NcCheckBox> {
                   color: Colors.transparent,
                 ),
           decoration: BoxDecoration(
-            border: current != true
-                ? Border.all(
-                    color: NcThemes.current.accentColor,
-                    width: NcCheckBox.borderWidth)
-                : Border.all(color: Colors.transparent, width: 0),
+            border: current != true ? Border.all(color: NcThemes.current.accentColor, width: NcCheckBox.borderWidth) : Border.all(color: Colors.transparent, width: 0),
             borderRadius: BorderRadius.circular(widget.radius),
             color: current ? NcThemes.current.accentColor : Colors.transparent,
           )),

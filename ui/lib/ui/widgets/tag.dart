@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcTag extends StatelessWidget {
   const NcTag({Key? key, required this.text, required this.backgroundColor, this.width, this.height = 25, this.fontSize}) : super(key: key);

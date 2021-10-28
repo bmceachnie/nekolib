@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcMaterialInputField extends StatelessWidget {
   const NcMaterialInputField({Key? key, this.prefixIcon, this.placeholder, this.width, this.onValueChanged, this.obscureText = false, this.autoFocus = false, this.onSubmit}) : super(key: key);

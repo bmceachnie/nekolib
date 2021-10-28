@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:lb_planner/ui.dart';
+import 'package:nekolib.ui/ui.dart';
 
 class NcVectorImage extends StatelessWidget {
   const NcVectorImage({Key? key, required this.code, this.width, this.height, this.aliignment = Alignment.center}) : super(key: key);
