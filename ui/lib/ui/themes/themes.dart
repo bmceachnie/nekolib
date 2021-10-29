@@ -72,10 +72,11 @@ class NcThemes {
 
   static Function? onCurrentThemeChange;
 
-  static final Map<String, NcTheme> all = {
-    dark.name: dark,
-    light.name: light,
-    ocean.name: ocean,
-    sakura.name: sakura
-  };
+  static Map<String, NcTheme> _all = {dark.name: dark, light.name: light, ocean.name: ocean, sakura.name: sakura};
+
+  static Map<String, NcTheme> get all => Map.unmodifiable(_all);
+
+  static void registerExternalTheme(NcTheme theme) {
+    _all[theme.name] = theme;
+  }
 }
