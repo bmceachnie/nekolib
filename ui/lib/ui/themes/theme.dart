@@ -24,10 +24,10 @@ class NcTheme {
     this._textColor = textColor;
     this._buttonTextColor = buttonTextColor ?? textColor;
 
-    this._doneColor = doneColor ?? _doneColor;
-    this._uploadedColor = uploadedColor ?? _uploadedColor;
-    this._lateColor = lateColor ?? _lateColor;
-    this._pendingColor = pendingColor ?? _pendingColor;
+    this._successColor = doneColor ?? _successColor;
+    this._warningColor = uploadedColor ?? _warningColor;
+    this._errorColor = lateColor ?? _errorColor;
+    this._neutralColor = pendingColor ?? _neutralColor;
   }
 
   NcTheme copyWith(
@@ -52,6 +52,7 @@ class NcTheme {
       tertiaryColor: tertiaryColor ?? this.tertiaryColor,
       accentColor: accentColor ?? this.accentColor,
       textColor: textColor ?? this.textColor,
+      buttonTextColor: buttonTextColor ?? this.buttonTextColor,
       icon: icon,
       iconColor: iconColor,
     );
@@ -64,10 +65,10 @@ class NcTheme {
   late Color _textColor;
   late Color _buttonTextColor;
 
-  late Color _doneColor = Color(0xFF4FB930);
-  late Color _uploadedColor = Color(0xFFF1C40F);
-  late Color _lateColor = Color(0xFFE74C3C);
-  late Color _pendingColor = Color(0xFF7F8C8D);
+  late Color _successColor = Color(0xFF4FB930);
+  late Color _warningColor = Color(0xFFF1C40F);
+  late Color _errorColor = Color(0xFFE74C3C);
+  late Color _neutralColor = Color(0xFF7F8C8D);
 
   final IconData icon;
   final Color iconColor;
@@ -79,8 +80,8 @@ class NcTheme {
   Color get accentColor => _accentColor;
   Color get textColor => _textColor;
   Color get buttonTextColor => _buttonTextColor;
-  Color get pendingColor => _pendingColor;
-  Color get lateColor => _lateColor;
-  Color get uploadedColor => _uploadedColor;
-  Color get doneColor => _doneColor;
+  Color get neutralColor => _neutralColor;
+  Color get errorColor => _errorColor;
+  Color get warningColor => _warningColor;
+  Color get successColor => _successColor;
 }

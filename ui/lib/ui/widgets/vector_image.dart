@@ -15,13 +15,13 @@ class NcVectorImage extends StatelessWidget {
   static const secondaryColor = "{secondarycolor}";
   static const primaryColor = "{primarycolor}";
   static const tertiaryColor = "{tertiaryColor}";
-  static const lateColor = "{lateColor}";
-  static const pendingColor = "{pendingColor}";
-  static const uploadedColor = "{uploadedColor}";
-  static const doneColor = "{doneColor}";
+  static const errorColor = "{lateColor}";
+  static const neutralColor = "{pendingColor}";
+  static const warningColor = "{uploadedColor}";
+  static const successColor = "{doneColor}";
   static const buttonTextColor = "{teritaryColor}";
 
-  static const List<String> colors = [accentColor, textColor, secondaryColor, primaryColor, tertiaryColor, doneColor, buttonTextColor, uploadedColor, lateColor, pendingColor];
+  static const List<String> colors = [accentColor, textColor, secondaryColor, primaryColor, tertiaryColor, successColor, buttonTextColor, warningColor, errorColor, neutralColor];
 
   static String svg(String code) {
     code = code.replaceAll(accentColor, "#${NcThemes.current.accentColor.value.toRadixString(16)}");
@@ -29,9 +29,9 @@ class NcVectorImage extends StatelessWidget {
     code = code.replaceAll(secondaryColor, "#${NcThemes.current.secondaryColor.value.toRadixString(16)}");
     code = code.replaceAll(primaryColor, "#${NcThemes.current.primaryColor.value.toRadixString(16)}");
     code = code.replaceAll(tertiaryColor, "#${NcThemes.current.tertiaryColor.value.toRadixString(16)}");
-    code = code.replaceAll(lateColor, "#${NcThemes.current.lateColor.value.toRadixString(16)}");
-    code = code.replaceAll(uploadedColor, "#${NcThemes.current.uploadedColor.value.toRadixString(16)}");
-    code = code.replaceAll(doneColor, "#${NcThemes.current.doneColor.value.toRadixString(16)}");
+    code = code.replaceAll(errorColor, "#${NcThemes.current.errorColor.value.toRadixString(16)}");
+    code = code.replaceAll(warningColor, "#${NcThemes.current.warningColor.value.toRadixString(16)}");
+    code = code.replaceAll(successColor, "#${NcThemes.current.successColor.value.toRadixString(16)}");
     code = code.replaceAll(buttonTextColor, "#${NcThemes.current.buttonTextColor.value.toRadixString(16)}");
 
     return code;

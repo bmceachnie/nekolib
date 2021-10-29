@@ -53,7 +53,7 @@ class NcButton extends StatelessWidget {
         ),
       ),
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(cancel ? NcThemes.current.lateColor : NcThemes.current.accentColor),
+        backgroundColor: MaterialStateProperty.all<Color>(cancel ? NcThemes.current.errorColor : NcThemes.current.accentColor),
         padding: MaterialStateProperty.all<EdgeInsets>(
           EdgeInsets.only(
             top: 15,
