@@ -30,6 +30,33 @@ class NcTheme {
     this._pendingColor = pendingColor ?? _pendingColor;
   }
 
+  NcTheme copyWith(
+    String name, {
+    Color? primaryColor,
+    Color? secondaryColor,
+    Color? tertiaryColor,
+    Color? accentColor,
+    Color? textColor,
+    Color? buttonTextColor,
+    Color? pendingColor,
+    Color? lateColor,
+    Color? uploadedColor,
+    Color? doneColor,
+    required IconData icon,
+    required Color iconColor,
+  }) {
+    return new NcTheme(
+      name,
+      primaryColor: primaryColor ?? this.primaryColor,
+      secondaryColor: secondaryColor ?? this.secondaryColor,
+      tertiaryColor: tertiaryColor ?? this.tertiaryColor,
+      accentColor: accentColor ?? this.accentColor,
+      textColor: textColor ?? this.textColor,
+      icon: icon,
+      iconColor: iconColor,
+    );
+  }
+
   late Color _primaryColor;
   late Color _secondaryColor;
   late Color _tertiaryColor;
