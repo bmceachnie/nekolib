@@ -55,22 +55,34 @@ class NcGridView extends StatelessWidget {
         ? responsive
             ? LayoutBuilder(
                 builder: (context, size) {
-                  int catgirlsHoriz = size.maxWidth ~/ minWidth;
-                  int catgirlsVert = size.maxHeight ~/ minHeight;
+                  int catgirlsHoriz = 0;
+                  int catgirlsVert = 0;
+
+                  if (size.maxHeight.isInfinite && size.maxWidth.isInfinite) throw new Exception("Invalid Constrains");
+
+                  if (size.maxHeight.isInfinite) {
+                    catgirlsHoriz = size.maxWidth ~/ minWidth;
+                    catgirlsVert = children.length ~/ catgirlsHoriz;
+                  }
+
+                  if (size.maxWidth.isInfinite) {
+                    catgirlsVert = size.maxHeight ~/ minHeight;
+                    catgirlsHoriz = children.length ~/ catgirlsVert;
+                  }
+
+                  if (size.maxHeight.isFinite && size.maxWidth.isFinite) {
+                    catgirlsVert = size.maxHeight ~/ minHeight;
+                    catgirlsHoriz = size.maxWidth ~/ minWidth;
+                  }
 
                   double width = size.maxWidth - spacing * catgirlsHoriz;
                   double height = size.maxHeight - spacing * catgirlsVert;
                   width -= edgePadding;
-                  // height -= edgePadding;
 
                   catgirlsHoriz = width / catgirlsHoriz < minWidth ? catgirlsHoriz -= (width / catgirlsHoriz / minWidth).ceil() : catgirlsHoriz;
                   catgirlsHoriz = catgirlsHoriz > children.length ? children.length : catgirlsHoriz;
                   catgirlsVert = height / catgirlsVert < minHeight ? catgirlsVert -= (height / catgirlsVert / minHeight).ceil() : catgirlsVert;
                   catgirlsVert = children.length == catgirlsHoriz ? 1 : catgirlsVert;
-                  print(catgirlsVert);
-                  print(width / catgirlsHoriz);
-
-                  // print(catgirlsVert);
 
                   double itemWidth = width / catgirlsHoriz;
 
@@ -88,7 +100,7 @@ class NcGridView extends StatelessWidget {
                           ? maxHeight
                           : itemHeight;
 
-                  int i = -1; // negative one because we increment the index before accessing the list
+                  int i = -1; // -1 because we increment the index before accessing the list
 
                   catgirlsVert = (children.length / catgirlsHoriz).ceil();
 
