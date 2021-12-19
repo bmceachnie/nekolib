@@ -23,7 +23,7 @@ class NcBaseText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (kIsWeb || selectable) && !buttonText
+    return selectable && !buttonText
         ? Theme(
             data: ThemeData(
               textSelectionTheme: webData(),
