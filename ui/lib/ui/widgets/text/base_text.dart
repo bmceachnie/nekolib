@@ -2,13 +2,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:nekolib.ui/ui.dart';
 
-// ignore: camel_case_types
 class NcBaseText extends StatelessWidget {
-  const NcBaseText(this.text, this.fontWeight, Key? key, this.fontSize, this.buttonText, this.overflow, this.textAlign) : super(key: key);
+  const NcBaseText(this.text, this.fontWeight, Key? key, this.fontSize, this.buttonText, this.overflow, this.textAlign, this.selectable) : super(key: key);
 
   final String text;
   final double? fontSize;
   final bool buttonText;
+  final bool selectable;
   final TextOverflow overflow;
   final TextAlign textAlign;
   final FontWeight fontWeight;
@@ -23,7 +23,7 @@ class NcBaseText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return kIsWeb && !buttonText
+    return (kIsWeb || selectable) && !buttonText
         ? Theme(
             data: ThemeData(
               textSelectionTheme: webData(),
