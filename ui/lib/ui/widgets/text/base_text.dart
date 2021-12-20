@@ -39,7 +39,7 @@ class NcBaseText extends StatelessWidget {
           )
         : Text(
             text,
-            style: style(fontSize: fontSize, fontWeight: fontWeight, buttonText: buttonText),
+            style: style(fontSize: fontSize, fontWeight: fontWeight, buttonText: buttonText, color: color),
             overflow: overflow,
             textAlign: textAlign,
           );
