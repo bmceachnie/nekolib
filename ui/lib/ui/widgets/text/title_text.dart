@@ -12,5 +12,6 @@ class NcTitleText extends NcBaseText {
     bool selectable = kIsWeb,
     TextOverflow overflow = TextOverflow.ellipsis,
     TextAlign textAlign = TextAlign.left,
-  }) : super(text, FontWeight.bold, key, fontSize, buttonText, overflow, textAlign, selectable);
+    Color? color,
+  }) : super(text, FontWeight.bold, key, fontSize, buttonText, overflow, textAlign, selectable, color);
 }

@@ -12,5 +12,6 @@ class NcCaptionText extends NcBaseText {
     bool selectable = kIsWeb,
     TextOverflow overflow = TextOverflow.ellipsis,
     TextAlign textAlign = TextAlign.left,
-  }) : super(text, FontWeight.w600, key, fontSize, buttonText, overflow, textAlign, selectable);
+    Color? color,
+  }) : super(text, FontWeight.w600, key, fontSize, buttonText, overflow, textAlign, selectable, color);
 }
