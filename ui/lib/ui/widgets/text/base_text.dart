@@ -14,8 +14,10 @@ class NcBaseText extends StatelessWidget {
   final TextAlign textAlign;
   final FontWeight fontWeight;
 
+  static const fontFamily = "Roboto";
+
   static TextStyle style({double? fontSize = 20, FontWeight fontWeight = FontWeight.normal, buttonText = false, Color? color}) {
-    return TextStyle(fontWeight: fontWeight, fontSize: fontSize, color: color ?? buttonText ? NcThemes.current.buttonTextColor : NcThemes.current.textColor, fontFamily: "Roboto");
+    return TextStyle(fontWeight: fontWeight, fontSize: fontSize, color: buttonText ? NcThemes.current.buttonTextColor : color ?? NcThemes.current.textColor, fontFamily: fontFamily);
   }
 
   static TextSelectionThemeData webData() {
