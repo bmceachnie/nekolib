@@ -52,7 +52,7 @@ class NcThemes {
     "桜",
     primaryColor: Color(0xFFFCE9EB),
     secondaryColor: Color(0xFFF3DCDB),
-    tertiaryColor: Color(0xFFfde0d8),
+    tertiaryColor: Color(0xFFECBDB0),
     accentColor: Color(0xFFF3A39E),
     textColor: Color(0xFF8C5E6B),
     buttonTextColor: Color(0xFFFCE9EB),
@@ -79,7 +79,7 @@ class NcThemes {
 
   static Map<String, NcTheme> get all => Map.unmodifiable(_all);
 
-  static void registerExternalTheme(NcTheme theme) {
+  static void registerTheme(NcTheme theme) {
     _all[theme.name] = theme;
   }
 }
