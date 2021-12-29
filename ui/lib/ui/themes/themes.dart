@@ -69,6 +69,8 @@ class NcThemes {
   static NcTheme get current => _current;
 
   static set current(NcTheme theme) {
+    if (theme == current) return;
+
     _current = theme;
     onCurrentThemeChange?.call();
   }
