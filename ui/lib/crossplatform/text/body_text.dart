@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:nekolib.ui/ui.dart';
+import 'package:nekolib.ui/crossplatform.dart';
 
 class NcBodyText extends NcBaseText {
   NcBodyText(

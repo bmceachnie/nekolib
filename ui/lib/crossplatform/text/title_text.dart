@@ -1,10 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:nekolib.ui/ui.dart';
+import 'package:nekolib.ui/crossplatform.dart';
 
-// ignore: camel_case_types
-class NcCaptionText extends NcBaseText {
-  NcCaptionText(
+class NcTitleText extends NcBaseText {
+  NcTitleText(
     String text, {
     Key? key,
     double? fontSize,
@@ -13,5 +12,5 @@ class NcCaptionText extends NcBaseText {
     TextOverflow overflow = TextOverflow.ellipsis,
     TextAlign textAlign = TextAlign.left,
     Color? color,
-  }) : super(text, FontWeight.w600, key, fontSize, buttonText, overflow, textAlign, selectable, color);
+  }) : super(text, FontWeight.bold, key, fontSize, buttonText, overflow, textAlign, selectable, color);
 }

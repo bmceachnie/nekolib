@@ -1,9 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:nekolib.ui/ui.dart';
+import 'package:nekolib.ui/crossplatform.dart';
 
 class NcBaseText extends StatelessWidget {
-  const NcBaseText(this.text, this.fontWeight, Key? key, this.fontSize, this.buttonText, this.overflow, this.textAlign, this.selectable, this.color) : super(key: key);
+  NcBaseText(this.text, this.fontWeight, Key? key, this.fontSize, this.buttonText, this.overflow, this.textAlign, this.selectable, this.color) : super(key: key);
 
   final String text;
   final double? fontSize;

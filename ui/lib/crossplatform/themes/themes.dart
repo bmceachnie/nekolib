@@ -7,7 +7,7 @@ import 'theme.dart';
 
 //All Themes
 class NcThemes {
-  //Light Theme
+  // Light Theme
   static final NcTheme light = NcTheme(
     "Light",
     primaryColor: Color(0xFFFFFFFF),
@@ -20,7 +20,7 @@ class NcThemes {
     iconColor: Colors.amber,
   );
 
-  //Dark Theme
+  // Dark Theme
   static final NcTheme dark = NcTheme(
     "Dark",
     primaryColor: Color(0xFF1D1D1D),
@@ -32,7 +32,7 @@ class NcThemes {
     iconColor: Colors.white,
   );
 
-//Ocean Theme
+  // Ocean Theme
   static final NcTheme ocean = NcTheme(
     "Ocean",
     primaryColor: Color(0xFF212942),
@@ -40,7 +40,7 @@ class NcThemes {
     tertiaryColor: Color(0xFF3D4C80),
     accentColor: Color(0xFF78A5FE),
     textColor: Color(0xFFF8F2F2),
-    doneColor: Color(0xFF208767),
+    successColor: Color(0xFF208767),
     uploadedColor: Color(0xFFCCB941),
     lateColor: Color(0xFFD15C4F),
     pendingColor: Color(0xFF626D6E),
@@ -48,6 +48,7 @@ class NcThemes {
     iconColor: Color(0xFF78A5FE),
   );
 
+  // Sakura Theme
   static final NcTheme sakura = NcTheme(
     "桜",
     primaryColor: Color(0xFFFCE9EB),
@@ -56,7 +57,7 @@ class NcThemes {
     accentColor: Color(0xFFF3A39E),
     textColor: Color(0xFF8C5E6B),
     buttonTextColor: Color(0xFFFCE9EB),
-    doneColor: Color(0xFFB2C959),
+    successColor: Color(0xFFB2C959),
     uploadedColor: Color(0xFFE5D75A),
     lateColor: Color(0xFFC26161),
     pendingColor: Color(0xFFE0BAC0),
@@ -77,11 +78,41 @@ class NcThemes {
 
   static Function? onCurrentThemeChange;
 
-  static Map<String, NcTheme> _all = {dark.name: dark, light.name: light, ocean.name: ocean, sakura.name: sakura};
+  static Map<String, NcTheme> _all = {};
 
   static Map<String, NcTheme> get all => Map.unmodifiable(_all);
 
   static void registerTheme(NcTheme theme) {
     _all[theme.name] = theme;
   }
+
+  /// The primary color of the current active theme
+  Color get primaryColor => _current.primaryColor;
+
+  /// The secondary color of the current active theme
+  Color get secondaryColor => _current.secondaryColor;
+
+  /// The teritary color of the current active theme
+  Color get tertiaryColor => _current.tertiaryColor;
+
+  /// The accent color of the current active theme
+  Color get accentColor => _current.accentColor;
+
+  /// The text color of the current active theme
+  Color get textColor => _current.textColor;
+
+  /// The button text color of the current active theme
+  Color get buttonTextColor => _current.buttonTextColor;
+
+  /// The neutral color of the current active theme
+  Color get neutralColor => _current.neutralColor;
+
+  /// The error color of the current active theme
+  Color get errorColor => _current.errorColor;
+
+  /// The warning color of the current active theme
+  Color get warningColor => _current.warningColor;
+
+  /// The success color of the current active theme
+  Color get successColor => _current.successColor;
 }
