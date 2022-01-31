@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nekolib.ui/crossplatform.dart';
+part of nekolib_ui_crossplatform;
 
 class NcVectorImage extends StatelessWidget {
   const NcVectorImage({Key? key, required this.code, this.width, this.height, this.aliignment = Alignment.center}) : super(key: key);

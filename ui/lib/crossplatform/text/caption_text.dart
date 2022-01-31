@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:nekolib.ui/crossplatform.dart';
+part of nekolib_ui_crossplatform;
 
 // ignore: camel_case_types
 class NcCaptionText extends NcBaseText {

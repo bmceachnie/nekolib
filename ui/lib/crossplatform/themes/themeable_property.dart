@@ -1,4 +1,4 @@
-import 'package:nekolib.ui/crossplatform.dart';
+part of nekolib_ui_crossplatform;
 
 /// A value that can change its value based on the current active theme.
 /// This is useful for values that are not defined in [NcTheme] but you still want to have the value theme dependend.

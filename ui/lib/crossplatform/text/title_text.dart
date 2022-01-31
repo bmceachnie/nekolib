@@ -1,6 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:nekolib.ui/crossplatform.dart';
+part of nekolib_ui_crossplatform;
 
 class NcTitleText extends NcBaseText {
   NcTitleText(

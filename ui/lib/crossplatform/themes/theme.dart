@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:nekolib.ui/crossplatform.dart';
+part of nekolib_ui_crossplatform;
 
 /// Represents a theme for an application.
 class NcTheme {

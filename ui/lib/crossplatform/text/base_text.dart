@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:nekolib.ui/crossplatform.dart';
+part of nekolib_ui_crossplatform;
 
 class NcBaseText extends StatelessWidget {
   NcBaseText(this.text, this.fontWeight, Key? key, this.fontSize, this.buttonText, this.overflow, this.textAlign, this.selectable, this.color) : super(key: key);

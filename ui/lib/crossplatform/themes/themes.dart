@@ -1,9 +1,4 @@
-export 'theme.dart';
-export 'themeable_property.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'theme.dart';
+part of nekolib_ui_crossplatform;
 
 /// Database of all themes.
 class NcThemes {

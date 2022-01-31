@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of nekolib_ui_crossplatform;
 
 class NcSpacing extends StatelessWidget {
   NcSpacing.xs({Key? key}) : super(key: key) {
