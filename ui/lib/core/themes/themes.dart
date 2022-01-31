@@ -34,36 +34,6 @@ class NcThemes {
 
     _all[theme.name] = theme;
   }
-
-  /// The primary color of the current active [NcTheme].
-  Color get primaryColor => _current.primaryColor;
-
-  /// The secondary color of the current active [NcTheme].
-  Color get secondaryColor => _current.secondaryColor;
-
-  /// The teritary color of the current active [NcTheme].
-  Color get tertiaryColor => _current.tertiaryColor;
-
-  /// The accent color of the current active [NcTheme].
-  Color get accentColor => _current.accentColor;
-
-  /// The text color of the current active [NcTheme].
-  Color get textColor => _current.textColor;
-
-  /// The button text color of the current active [NcTheme].
-  Color get buttonTextColor => _current.buttonTextColor;
-
-  /// The neutral color of the current active [NcTheme].
-  Color get neutralColor => _current.neutralColor;
-
-  /// The error color of the current active [NcTheme].
-  Color get errorColor => _current.errorColor;
-
-  /// The warning color of the current active [NcTheme].
-  Color get warningColor => _current.warningColor;
-
-  /// The success color of the current active [NcTheme].
-  Color get successColor => _current.successColor;
 }
 
 /// Predefined Light Theme
@@ -123,3 +93,33 @@ final NcTheme sakuraTheme = NcTheme(
   icon: FontAwesome5Solid.tree,
   iconColor: Color(0xFFF3A39E),
 );
+
+/// The primary color of the current active [NcTheme].
+Color get primaryColor => NcThemes.current.primaryColor;
+
+/// The secondary color of the current active [NcTheme].
+Color get secondaryColor => NcThemes.current.secondaryColor;
+
+/// The teritary color of the current active [NcTheme].
+Color get tertiaryColor => NcThemes.current.tertiaryColor;
+
+/// The accent color of the current active [NcTheme].
+Color get accentColor => NcThemes.current.accentColor;
+
+/// The text color of the current active [NcTheme].
+Color get textColor => NcThemes.current.textColor;
+
+/// The button text color of the current active [NcTheme].
+Color get buttonTextColor => NcThemes.current.buttonTextColor;
+
+/// The neutral color of the current active [NcTheme].
+Color get neutralColor => NcThemes.current.neutralColor;
+
+/// The error color of the current active [NcTheme].
+Color get errorColor => NcThemes.current.errorColor;
+
+/// The warning color of the current active [NcTheme].
+Color get warningColor => NcThemes.current.warningColor;
+
+/// The success color of the current active [NcTheme].
+Color get successColor => NcThemes.current.successColor;
