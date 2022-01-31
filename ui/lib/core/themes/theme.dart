@@ -3,6 +3,7 @@ part of nekolib_ui_core;
 /// Represents a theme for an application.
 class NcTheme {
   /// Creates a new theme with the given properties and registers it in the database.
+  /// Where [buttonTextColor] &rarr; The text color of the theme. Used for text or icons inside buttons. If not set, [textColor] is used.
   NcTheme(
     this.name, {
     required this.primaryColor,
@@ -10,7 +11,7 @@ class NcTheme {
     required this.tertiaryColor,
     required this.accentColor,
     required this.textColor,
-    this.buttonTextColor = Colors.transparent,
+    Color? buttonTextColor,
     this.neutralColor = defaultNeutralColor,
     this.errorColor = defaultErrorColor,
     this.warningColor = defaultWarningColor,
@@ -18,7 +19,7 @@ class NcTheme {
     required this.icon,
     required this.iconColor,
   }) {
-    this.buttonTextColor = buttonTextColor == Colors.transparent ? textColor : buttonTextColor;
+    this.buttonTextColor = buttonTextColor ?? textColor;
 
     NcThemes.registerTheme(this);
   }

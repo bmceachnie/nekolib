@@ -10,16 +10,22 @@ class NcThemes {
   /// Defaults to [lightTheme].
   static NcTheme get current => _current;
 
-  /// Sets the current [theme] and calls [onCurrentThemeChange] the theme changes.
+  /// Sets the current [theme] and calls [onCurrentThemeChanged] the theme changes.
   static void setTheme(NcTheme theme) {
     if (theme == _current) return;
 
+    print('[NcThemes] setTheme: ${theme.name}');
+
     _current = theme;
-    onCurrentThemeChange?.call();
+    _themeNotier.sink.add(theme);
   }
 
-  /// Gets called when [setTheme] is used and the current theme changes.
-  static Function? onCurrentThemeChange;
+  /// Stream to notify listeners when the current theme changes.
+  // ignore: close_sinks
+  static StreamController<NcTheme> _themeNotier = BehaviorSubject.seeded(lightTheme);
+
+  /// Emmits the new [NcTheme] when [setTheme] is used and the current theme changes.
+  static Stream<NcTheme> get onCurrentThemeChanged => _themeNotier.stream;
 
   /// Contains all themes.
   static Map<String, NcTheme> _all = {};
@@ -94,32 +100,32 @@ final NcTheme sakuraTheme = NcTheme(
   iconColor: Color(0xFFF3A39E),
 );
 
-/// The primary color of the current active [NcTheme].
+/// The primary color of the current active [NcThemes.current].
 Color get primaryColor => NcThemes.current.primaryColor;
 
-/// The secondary color of the current active [NcTheme].
+/// The secondary color of the current active [NcThemes.current].
 Color get secondaryColor => NcThemes.current.secondaryColor;
 
-/// The teritary color of the current active [NcTheme].
+/// The teritary color of the current active [NcThemes.current].
 Color get tertiaryColor => NcThemes.current.tertiaryColor;
 
-/// The accent color of the current active [NcTheme].
+/// The accent color of the current active [NcThemes.current].
 Color get accentColor => NcThemes.current.accentColor;
 
-/// The text color of the current active [NcTheme].
+/// The text color of the current active [NcThemes.current].
 Color get textColor => NcThemes.current.textColor;
 
-/// The button text color of the current active [NcTheme].
+/// The button text color of the current active [NcThemes.current].
 Color get buttonTextColor => NcThemes.current.buttonTextColor;
 
-/// The neutral color of the current active [NcTheme].
+/// The neutral color of the current active [NcThemes.current].
 Color get neutralColor => NcThemes.current.neutralColor;
 
-/// The error color of the current active [NcTheme].
+/// The error color of the current active [NcThemes.current].
 Color get errorColor => NcThemes.current.errorColor;
 
-/// The warning color of the current active [NcTheme].
+/// The warning color of the current active [NcThemes.current].
 Color get warningColor => NcThemes.current.warningColor;
 
-/// The success color of the current active [NcTheme].
+/// The success color of the current active [NcThemes.current].
 Color get successColor => NcThemes.current.successColor;

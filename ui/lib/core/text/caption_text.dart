@@ -1,6 +1,5 @@
 part of nekolib_ui_core;
 
-// ignore: camel_case_types
 class NcCaptionText extends NcBaseText {
   NcCaptionText(
     String text, {
