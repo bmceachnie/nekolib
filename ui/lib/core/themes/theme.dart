@@ -1,4 +1,4 @@
-part of nekolib_ui_crossplatform;
+part of nekolib_ui_core;
 
 /// Represents a theme for an application.
 class NcTheme {

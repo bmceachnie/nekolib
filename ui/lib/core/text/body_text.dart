@@ -1,8 +1,7 @@
-part of nekolib_ui_crossplatform;
+part of nekolib_ui_core;
 
-// ignore: camel_case_types
-class NcCaptionText extends NcBaseText {
-  NcCaptionText(
+class NcBodyText extends NcBaseText {
+  NcBodyText(
     String text, {
     Key? key,
     double? fontSize,
@@ -11,5 +10,5 @@ class NcCaptionText extends NcBaseText {
     TextOverflow overflow = TextOverflow.ellipsis,
     TextAlign textAlign = TextAlign.left,
     Color? color,
-  }) : super(text, FontWeight.w600, key, fontSize, buttonText, overflow, textAlign, selectable, color);
+  }) : super(text, FontWeight.normal, key, fontSize, buttonText, overflow, textAlign, selectable, color);
 }

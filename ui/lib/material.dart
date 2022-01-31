@@ -1,3 +1,3 @@
 library nekolib_ui_material;
 
-import 'package:nekolib.ui/crossplatform.dart';
+import 'package:nekolib_ui/core.dart';

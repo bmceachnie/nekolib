@@ -1,4 +1,4 @@
-part of nekolib_ui_crossplatform;
+part of nekolib_ui_core;
 
 class NcBaseText extends StatelessWidget {
   NcBaseText(this.text, this.fontWeight, Key? key, this.fontSize, this.buttonText, this.overflow, this.textAlign, this.selectable, this.color) : super(key: key);

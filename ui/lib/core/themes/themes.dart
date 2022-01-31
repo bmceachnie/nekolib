@@ -1,4 +1,4 @@
-part of nekolib_ui_crossplatform;
+part of nekolib_ui_core;
 
 /// Database of all themes.
 class NcThemes {
