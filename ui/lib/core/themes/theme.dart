@@ -98,7 +98,7 @@ class NcTheme {
   /// The text color of the theme. Used for text or icons inside buttons. If not set, [textColor] is used.
   late final Color buttonTextColor;
 
-  /// Success color. Used to give feedback to the user. For example, when a task is successfully uploaded. If not set, defaults to [defaultSuccessColor].
+  /// Success color. Used to give feedback to the user. For example, when a task was successfully completed. If not set, defaults to [defaultSuccessColor].
   late final Color successColor;
 
   /// Warning color. Used to give feedback to the user. For example, when a task was completed with minor errors. If not set, defaults to [defaultWarningColor].

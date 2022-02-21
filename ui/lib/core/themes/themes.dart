@@ -100,32 +100,32 @@ final NcTheme sakuraTheme = NcTheme(
   iconColor: Color(0xFFF3A39E),
 );
 
-/// The primary color of the current active [NcThemes.current].
+/// The primary color of the current active [NcThemes]. This is used for foreground elements.
 Color get primaryColor => NcThemes.current.primaryColor;
 
-/// The secondary color of the current active [NcThemes.current].
+/// The secondary color of the current active [NcThemes]. This is used for the background of the app.
 Color get secondaryColor => NcThemes.current.secondaryColor;
 
-/// The teritary color of the current active [NcThemes.current].
+/// The teritary color of the current active [NcThemes]. Used for popups, tooltips, etc.
 Color get tertiaryColor => NcThemes.current.tertiaryColor;
 
-/// The accent color of the current active [NcThemes.current].
+/// The accent color of the current active [NcThemes]. Used for buttons, scrollbars, etc.
 Color get accentColor => NcThemes.current.accentColor;
 
-/// The text color of the current active [NcThemes.current].
+/// The text color of the current active [NcThemes]. Used for text, labels, etc.
 Color get textColor => NcThemes.current.textColor;
 
-/// The button text color of the current active [NcThemes.current].
+/// The button text color of the current active [NcThemes]. Used for text or icons inside buttons.
 Color get buttonTextColor => NcThemes.current.buttonTextColor;
 
-/// The neutral color of the current active [NcThemes.current].
+/// The neutral color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task is pending.
 Color get neutralColor => NcThemes.current.neutralColor;
 
-/// The error color of the current active [NcThemes.current].
+/// The error color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task was completed with major errors.
 Color get errorColor => NcThemes.current.errorColor;
 
-/// The warning color of the current active [NcThemes.current].
+/// The warning color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task was completed with minor errors.
 Color get warningColor => NcThemes.current.warningColor;
 
-/// The success color of the current active [NcThemes.current].
+/// The success color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task was successfully completed.
 Color get successColor => NcThemes.current.successColor;
