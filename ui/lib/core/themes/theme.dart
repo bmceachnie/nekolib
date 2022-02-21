@@ -11,6 +11,7 @@ class NcTheme {
     required this.tertiaryColor,
     required this.accentColor,
     required this.textColor,
+    required this.brightness,
     Color? buttonTextColor,
     this.neutralColor = defaultNeutralColor,
     this.errorColor = defaultErrorColor,
@@ -64,6 +65,7 @@ class NcTheme {
     Color? lateColor,
     Color? uploadedColor,
     Color? successColor,
+    Brightness? brightness,
     required IconData icon,
     required Color iconColor,
   }) {
@@ -75,6 +77,7 @@ class NcTheme {
       accentColor: accentColor ?? this.accentColor,
       textColor: textColor ?? this.textColor,
       buttonTextColor: buttonTextColor ?? this.buttonTextColor,
+      brightness: brightness ?? this.brightness,
       icon: icon,
       iconColor: iconColor,
     );
@@ -115,6 +118,9 @@ class NcTheme {
 
   /// The color of the icon of the theme.
   final Color iconColor;
+
+  /// The brightness of the theme.
+  final Brightness brightness;
 
   /// The name of the theme. Has to be unique.
   final String name;

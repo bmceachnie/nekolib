@@ -45,6 +45,7 @@ class NcThemes {
 /// Predefined Light Theme
 final NcTheme lightTheme = NcTheme(
   "Light",
+  brightness: Brightness.light,
   primaryColor: Color(0xFFFFFFFF),
   secondaryColor: Color(0xFFF2F3F9),
   tertiaryColor: Color(0xFFCFCFCF),
@@ -58,6 +59,7 @@ final NcTheme lightTheme = NcTheme(
 /// Predefined Dark Theme
 final NcTheme darkTheme = NcTheme(
   "Dark",
+  brightness: Brightness.dark,
   primaryColor: Color(0xFF1D1D1D),
   secondaryColor: Color(0xFF2A2A2A),
   tertiaryColor: Color(0xFF444444),
@@ -70,6 +72,7 @@ final NcTheme darkTheme = NcTheme(
 /// Predefined Ocean Theme
 final NcTheme oceanTheme = NcTheme(
   "Ocean",
+  brightness: Brightness.dark,
   primaryColor: Color(0xFF212942),
   secondaryColor: Color(0xFF262E48),
   tertiaryColor: Color(0xFF3D4C80),
@@ -86,6 +89,7 @@ final NcTheme oceanTheme = NcTheme(
 /// Predefined Sakura Theme
 final NcTheme sakuraTheme = NcTheme(
   "桜",
+  brightness: Brightness.light,
   primaryColor: Color(0xFFFCE9EB),
   secondaryColor: Color(0xFFF3DCDB),
   tertiaryColor: Color(0xFFECBDB0),
@@ -103,29 +107,32 @@ final NcTheme sakuraTheme = NcTheme(
 /// The primary color of the current active [NcThemes]. This is used for foreground elements.
 Color get primaryColor => NcThemes.current.primaryColor;
 
-/// The secondary color of the current active [NcThemes]. This is used for the background of the app.
+/// The secondary color of the current active [NcTheme]. This is used for the background of the app.
 Color get secondaryColor => NcThemes.current.secondaryColor;
 
-/// The teritary color of the current active [NcThemes]. Used for popups, tooltips, etc.
+/// The teritary color of the current active [NcTheme]. Used for popups, tooltips, etc.
 Color get tertiaryColor => NcThemes.current.tertiaryColor;
 
-/// The accent color of the current active [NcThemes]. Used for buttons, scrollbars, etc.
+/// The accent color of the current active [NcTheme]. Used for buttons, scrollbars, etc.
 Color get accentColor => NcThemes.current.accentColor;
 
-/// The text color of the current active [NcThemes]. Used for text, labels, etc.
+/// The text color of the current active [NcTheme]. Used for text, labels, etc.
 Color get textColor => NcThemes.current.textColor;
 
-/// The button text color of the current active [NcThemes]. Used for text or icons inside buttons.
+/// The button text color of the current active [NcTheme]. Used for text or icons inside buttons.
 Color get buttonTextColor => NcThemes.current.buttonTextColor;
 
-/// The neutral color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task is pending.
+/// The neutral color of the current active [NcTheme]. Used to give feedback to the user. For example, when a task is pending.
 Color get neutralColor => NcThemes.current.neutralColor;
 
-/// The error color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task was completed with major errors.
+/// The error color of the current active [NcTheme]. Used to give feedback to the user. For example, when a task was completed with major errors.
 Color get errorColor => NcThemes.current.errorColor;
 
-/// The warning color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task was completed with minor errors.
+/// The warning color of the current active [NcTheme]. Used to give feedback to the user. For example, when a task was completed with minor errors.
 Color get warningColor => NcThemes.current.warningColor;
 
-/// The success color of the current active [NcThemes]. Used to give feedback to the user. For example, when a task was successfully completed.
+/// The success color of the current active [NcTheme]. Used to give feedback to the user. For example, when a task was successfully completed.
 Color get successColor => NcThemes.current.successColor;
+
+/// The brightness of the current active [NcTheme].
+Brightness get brightness => NcThemes.current.brightness;
