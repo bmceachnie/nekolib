@@ -30,48 +30,49 @@ class NcVectorImage extends StatelessWidget {
   final Alignment alignment;
 
   /// Interpolate this into the SVG code to use the accent color of the [NcThemes.current] theme.
-  static const accentColor = "{accentcolor}";
+  static const accentColor = "{ncaccentcolor}";
 
   /// Interpolate this into the SVG code to use the text color of the [NcThemes.current] theme.
-  static const textColor = "{textcolor}";
+  static const textColor = "{nctextcolor}";
 
   /// Interpolate this into the SVG code to use the secondary color of the [NcThemes.current] theme.
-  static const secondaryColor = "{secondarycolor}";
+  static const secondaryColor = "{ncsecondarycolor}";
 
   /// Interpolate this into the SVG code to use the primary color of the [NcThemes.current] theme.
-  static const primaryColor = "{primarycolor}";
+  static const primaryColor = "{ncprimarycolor}";
 
   /// Interpolate this into the SVG code to use the tertiary color of the [NcThemes.current] theme.
-  static const tertiaryColor = "{tertiarycolor}";
+  static const tertiaryColor = "{nctertiarycolor}";
 
   /// Interpolate this into the SVG code to use the error color of the [NcThemes.current] theme.
-  static const errorColor = "{errorcolor}";
+  static const errorColor = "{ncerrorcolor}";
 
   /// Interpolate this into the SVG code to use the neutral color of the [NcThemes.current] theme.
-  static const neutralColor = "{neutralcolor}";
+  static const neutralColor = "{ncneutralcolor}";
 
   /// Interpolate this into the SVG code to use the warning color of the [NcThemes.current] theme.
-  static const warningColor = "{warningcolor}";
+  static const warningColor = "{ncwarningcolor}";
 
   /// Interpolate this into the SVG code to use the success color of the [NcThemes.current] theme.
-  static const successColor = "{successcolor}";
+  static const successColor = "{ncsuccesscolor}";
 
   /// Interpolate this into the SVG code to use the button text color of the [NcThemes.current] theme.
-  static const buttonTextColor = "{buttonTextcolor}";
+  static const buttonTextColor = "{ncbuttontextcolor}";
 
   /// Interpolates all the theme colors into the given [code].
   static String svg(String code) {
-    code = code.replaceAll(accentColor, _toHex(NcThemes.current.accentColor))
-      ..replaceAll(textColor, _toHex(NcThemes.current.textColor))
-      ..replaceAll(secondaryColor, _toHex(NcThemes.current.secondaryColor))
-      ..replaceAll(primaryColor, _toHex(NcThemes.current.primaryColor))
-      ..replaceAll(tertiaryColor, _toHex(NcThemes.current.tertiaryColor))
-      ..replaceAll(errorColor, _toHex(NcThemes.current.errorColor))
-      ..replaceAll(warningColor, _toHex(NcThemes.current.warningColor))
-      ..replaceAll(successColor, _toHex(NcThemes.current.successColor))
-      ..replaceAll(buttonTextColor, _toHex(NcThemes.current.buttonTextColor));
+    var encoded = code.replaceAll(accentColor, _toHex(NcThemes.current.accentColor));
+    encoded = encoded.replaceAll(textColor, _toHex(NcThemes.current.textColor));
+    encoded = encoded.replaceAll(secondaryColor, _toHex(NcThemes.current.secondaryColor));
+    encoded = encoded.replaceAll(primaryColor, _toHex(NcThemes.current.primaryColor));
+    encoded = encoded.replaceAll(tertiaryColor, _toHex(NcThemes.current.tertiaryColor));
+    encoded = encoded.replaceAll(errorColor, _toHex(NcThemes.current.errorColor));
+    encoded = encoded.replaceAll(neutralColor, _toHex(NcThemes.current.neutralColor));
+    encoded = encoded.replaceAll(warningColor, _toHex(NcThemes.current.warningColor));
+    encoded = encoded.replaceAll(successColor, _toHex(NcThemes.current.successColor));
+    encoded = encoded.replaceAll(buttonTextColor, _toHex(NcThemes.current.buttonTextColor));
 
-    return code;
+    return encoded;
   }
 
   /// Converts the given [color] to a hex string.
