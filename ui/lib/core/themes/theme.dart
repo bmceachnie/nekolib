@@ -1,4 +1,4 @@
-part of nekolib_ui_core;
+part of core;
 
 /// Represents a theme for an application.
 class NcTheme {

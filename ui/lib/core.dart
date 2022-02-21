@@ -1,4 +1,5 @@
-library nekolib_ui_core;
+/// Contains everything needed for the UI kit that is the same for all platforms.
+library core;
 
 import 'dart:async';
 

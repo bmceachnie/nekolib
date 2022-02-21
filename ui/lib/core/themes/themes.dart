@@ -1,4 +1,4 @@
-part of nekolib_ui_core;
+part of core;
 
 /// Database of all themes.
 class NcThemes {

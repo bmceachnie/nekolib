@@ -1,4 +1,4 @@
-part of nekolib_ui_core;
+part of core;
 
 /// A wrapper for themed apps that will automatically rebuild the app when [NcThemes.current] changes.
 class NcApp extends StatelessWidget {

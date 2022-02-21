@@ -1,4 +1,4 @@
-part of nekolib_ui_core;
+part of core;
 
 /// A value that can change its value based on the current active theme.
 /// This is useful for values that are not defined in [NcTheme] but you still want to have the value theme dependend.

@@ -1,4 +1,4 @@
-part of nekolib_ui_core;
+part of core;
 
 class NcBodyText extends NcBaseText {
   NcBodyText(

@@ -1,4 +1,4 @@
-part of nekolib_ui_core;
+part of core;
 
 /// Base class for every themed text.
 class NcBaseText extends StatelessWidget {
