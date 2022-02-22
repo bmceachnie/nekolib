@@ -31,5 +31,5 @@ class ThemeableProperty<T> {
   late final Map<NcTheme, T> values;
 
   /// The current value of this property that corresponds to the current active [NcTheme].
-  T get value => values[NcThemes.current.name]!;
+  T get value => values[NcThemes.current]!;
 }
