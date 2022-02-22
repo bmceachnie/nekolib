@@ -17,15 +17,15 @@ class NcThemes {
     print('[NcThemes] setTheme: ${theme.name}');
 
     _current = theme;
-    _themeNotier.sink.add(theme);
+    _themeNotfier.sink.add(theme);
   }
 
   /// Stream to notify listeners when the current theme changes.
   // ignore: close_sinks
-  static StreamController<NcTheme> _themeNotier = BehaviorSubject.seeded(lightTheme);
+  static StreamController<NcTheme> _themeNotfier = BehaviorSubject.seeded(lightTheme);
 
   /// Emmits the new [NcTheme] when [setTheme] is used and the current theme changes.
-  static Stream<NcTheme> get onCurrentThemeChanged => _themeNotier.stream;
+  static Stream<NcTheme> get onCurrentThemeChanged => _themeNotfier.stream;
 
   /// Contains all themes.
   static Map<String, NcTheme> _all = {};
