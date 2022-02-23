@@ -11,8 +11,9 @@ class NcThemes {
   static NcTheme get current => _current;
 
   /// Sets the current [theme] and calls [onCurrentThemeChanged] the theme changes.
-  static void setTheme(NcTheme theme) {
-    if (theme == _current) return;
+  /// Use [force] in order to force an update of the theme even if it has not changed.
+  static void setTheme(NcTheme theme, {bool force = false}) {
+    if (theme == _current && !force) return;
 
     print('[NcThemes] setTheme: ${theme.name}');
 
