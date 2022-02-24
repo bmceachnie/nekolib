@@ -25,6 +25,25 @@ class NcTheme {
     NcThemes.registerTheme(this);
   }
 
+  /// Creates a new predifined theme with the given properties. (Internal use only)
+  /// Where [buttonTextColor] &rarr; The text color of the theme. Used for text or icons inside buttons. If not set, [textColor] is used.
+  NcTheme.predifined(
+    this.name, {
+    required this.primaryColor,
+    required this.secondaryColor,
+    required this.tertiaryColor,
+    required this.accentColor,
+    required this.textColor,
+    required this.brightness,
+    Color? buttonTextColor,
+    this.neutralColor = defaultNeutralColor,
+    this.errorColor = defaultErrorColor,
+    this.warningColor = defaultWarningColor,
+    this.successColor = defaultSuccessColor,
+    required this.icon,
+    required this.iconColor,
+  }) : this.buttonTextColor = buttonTextColor ?? textColor;
+
   /// Creates a copy of this theme with a new given name and new given properties. If a property is not set, it will be inherited from the original theme.
   /// The new theme will be registered in the database automatically.
   ///

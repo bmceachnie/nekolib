@@ -17,4 +17,8 @@ class NcApp extends StatelessWidget {
 }
 
 /// Wraps the given [app] in an [NcApp] widget and calls the [runApp] method.
-runThemedApp(WidgetBuilder app) => runApp(NcApp(builder: app));
+void runThemedApp(WidgetBuilder app) {
+  NcThemes.initPredefinedThemes();
+
+  runApp(NcApp(builder: app));
+}

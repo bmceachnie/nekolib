@@ -41,10 +41,19 @@ class NcThemes {
 
     _all[theme.name] = theme;
   }
+
+  /// Ensures that all predefined themes are registered.
+  /// This method is called automatically when using [runThemedApp].
+  static void initPredefinedThemes() {
+    registerTheme(lightTheme);
+    registerTheme(darkTheme);
+    registerTheme(oceanTheme);
+    registerTheme(sakuraTheme);
+  }
 }
 
 /// Predefined Light Theme
-final NcTheme lightTheme = NcTheme(
+final NcTheme lightTheme = NcTheme.predifined(
   "Light",
   brightness: Brightness.light,
   primaryColor: Color(0xFFFFFFFF),
@@ -58,7 +67,7 @@ final NcTheme lightTheme = NcTheme(
 );
 
 /// Predefined Dark Theme
-final NcTheme darkTheme = NcTheme(
+final NcTheme darkTheme = NcTheme.predifined(
   "Dark",
   brightness: Brightness.dark,
   primaryColor: Color(0xFF1D1D1D),
@@ -71,7 +80,7 @@ final NcTheme darkTheme = NcTheme(
 );
 
 /// Predefined Ocean Theme
-final NcTheme oceanTheme = NcTheme(
+final NcTheme oceanTheme = NcTheme.predifined(
   "Ocean",
   brightness: Brightness.dark,
   primaryColor: Color(0xFF212942),
@@ -88,7 +97,7 @@ final NcTheme oceanTheme = NcTheme(
 );
 
 /// Predefined Sakura Theme
-final NcTheme sakuraTheme = NcTheme(
+final NcTheme sakuraTheme = NcTheme.predifined(
   "桜",
   brightness: Brightness.light,
   primaryColor: Color(0xFFFCE9EB),
