@@ -1,8 +1,9 @@
 /// Contains everything needed for the UI kit that is the same for all platforms.
 library core;
 
-import 'dart:async';
+export 'animations.dart';
 
+import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
