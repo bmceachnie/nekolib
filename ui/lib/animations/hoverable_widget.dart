@@ -1,8 +1,8 @@
 part of animations;
 
-/// Base class for all [_HoverableWidget]s.
-abstract class _HoverableWidget extends StatefulWidget {
-  const _HoverableWidget({Key? key, required this.cursor}) : super(key: key);
+/// Base class for all [HoverableWidget]s.
+abstract class HoverableWidget extends StatefulWidget {
+  const HoverableWidget({Key? key, required this.cursor}) : super(key: key);
 
   /// The cursor to use when the widget is hovered.
   final MouseCursor cursor;
@@ -11,10 +11,10 @@ abstract class _HoverableWidget extends StatefulWidget {
   Widget build(BuildContext context, bool isHovering);
 
   @override
-  State<_HoverableWidget> createState() => _HoverableWidgetState();
+  State<HoverableWidget> createState() => _HoverableWidgetState();
 }
 
-class _HoverableWidgetState extends State<_HoverableWidget> {
+class _HoverableWidgetState extends State<HoverableWidget> {
   bool _isHovering = false;
 
   _onEnter(_) {
