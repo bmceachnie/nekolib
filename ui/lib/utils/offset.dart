@@ -1,4 +1,4 @@
-part of animations;
+part of utils;
 
 /// Offsets the child to the given [offset] when hovered.
 class OffsetOnHover extends HoverableWidget {

@@ -1,9 +1,9 @@
-library animations;
+library utils;
 
 import 'package:flutter/material.dart';
 
-part 'animations/hoverable_widget.dart';
-part 'animations/scale.dart';
-part 'animations/builder.dart';
-part 'animations/transform.dart';
-part 'animations/offset.dart';
+part 'utils/hoverable_widget.dart';
+part 'utils/scale.dart';
+part 'utils/builder.dart';
+part 'utils/transform.dart';
+part 'utils/offset.dart';

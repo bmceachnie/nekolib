@@ -1,4 +1,4 @@
-part of animations;
+part of utils;
 
 /// Transforms the child to the given [transform] when hovered.
 class TransformOnHover extends HoverableWidget {

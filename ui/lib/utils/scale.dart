@@ -1,4 +1,4 @@
-part of animations;
+part of utils;
 
 /// Scales the child to the given [scale] when hovered.
 class ScaleOnHover extends HoverableWidget {
