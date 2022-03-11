@@ -57,7 +57,7 @@ class NcLogo extends StatelessWidget {
         Text(
           "―ねこで―",
           style: GoogleFonts.delaGothicOne(
-            fontSize: fontSize - fontDiff,
+            fontSize: subtitleFontSize ?? (fontSize - fontDiff),
             color: textColor,
           ),
         ),
