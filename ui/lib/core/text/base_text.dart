@@ -29,12 +29,9 @@ class NcBaseText extends StatelessWidget {
   /// The font weight to use for the text.
   final FontWeight fontWeight;
 
-  /// The font family used for every text that derives from [NcBaseText].
-  static const fontFamily = "Roboto";
-
   /// Creates a TextStyle based on the given [fontSize], [color], [fontWeight] and if [buttonText] is true [buttonTextColor] will be used as the text color.
   static TextStyle style({double? fontSize = 20, FontWeight fontWeight = FontWeight.normal, buttonText = false, Color? color}) {
-    return TextStyle(fontWeight: fontWeight, fontSize: fontSize, color: buttonText ? NcThemes.current.buttonTextColor : color ?? NcThemes.current.textColor, fontFamily: fontFamily);
+    return GoogleFonts.roboto(fontWeight: fontWeight, fontSize: fontSize, color: buttonText ? NcThemes.current.buttonTextColor : color ?? NcThemes.current.textColor);
   }
 
   /// The theme data used if [selectable] is set to true.
