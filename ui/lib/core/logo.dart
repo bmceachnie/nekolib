@@ -2,10 +2,13 @@ part of core;
 
 /// Logo of [necodeIT](https://github.com/necodeIT), the creators of this [library](https://github.com/necodeIT/nekolib/tree/flutter).
 class NcLogo extends StatelessWidget {
-  NcLogo({Key? key, this.fontSize = 55, this.width, this.height}) : super(key: key);
+  NcLogo({Key? key, this.fontSize = 55, this.width, this.height, this.subtitleFontSize}) : super(key: key);
 
   /// The size of the logo.
   final double fontSize;
+
+  /// The font size of the "―ねこで―" text. If not specified, it will be the difference between [fontSize] and [fonDiff].
+  final double? subtitleFontSize;
 
   /// The width of the logo (only affects the cat).
   final double? width;
