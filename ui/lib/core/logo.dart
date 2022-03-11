@@ -49,6 +49,7 @@ class NcLogo extends StatelessWidget {
         NcSpacing.medium(),
         Text(
           'necodeIT',
+          textAlign: TextAlign.center,
           style: GoogleFonts.orbitron(
             fontSize: fontSize,
             color: textColor,
@@ -56,6 +57,7 @@ class NcLogo extends StatelessWidget {
         ),
         Text(
           "―ねこで―",
+          textAlign: TextAlign.center,
           style: GoogleFonts.delaGothicOne(
             fontSize: subtitleFontSize ?? (fontSize - fontDiff),
             color: textColor,
