@@ -18,3 +18,4 @@ part 'core/text/base_text.dart';
 part 'core/text/caption_text.dart';
 part 'core/text/title_text.dart';
 part 'core/text/body_text.dart';
+part 'core/logo.dart';
