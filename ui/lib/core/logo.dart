@@ -45,6 +45,7 @@ class NcLogo extends StatelessWidget {
           code: logoSvg,
           width: width,
           height: height,
+          alignment: Alignment.center,
         ),
         NcSpacing.medium(),
         Text(
