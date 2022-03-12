@@ -16,5 +16,5 @@ class LogEntry {
   LogEntry.empty() : this(message: '', date: DateTime.now(), type: LogTypes.info);
 
   @override
-  String toString() => "${type.emoji} ${EnumToString.convertToString(type).toUpperCase()}: ${date.logFormat}:    $message\n";
+  String toString() => "${date.logFormat}: ${type.emoji} ${EnumToString.convertToString(type).toUpperCase()}:    $message\n";
 }
