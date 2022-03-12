@@ -11,7 +11,7 @@ extension DateLogExtension on DateTime {
 extension LogTypeEmojis on LogTypes {
   /// Returns the emoji for the log type.
   String get emoji => this == LogTypes.info
-      ? '💬'
+      ? '💡'
       : this == LogTypes.error
           ? '❌'
           : this == LogTypes.warning
@@ -22,5 +22,7 @@ extension LogTypeEmojis on LogTypes {
                       ? '🐞'
                       : this == LogTypes.tracking
                           ? '📈'
-                          : '🔥';
+                          : this == LogTypes.flutter
+                              ? '🐦'
+                              : '🔥';
 }

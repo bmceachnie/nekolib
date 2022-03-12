@@ -22,4 +22,7 @@ enum LogTypes {
 
   /// Log message. which provides tracking of wich methods were called and what the user was doing.
   tracking,
+
+  /// Log message containing errors thrown by flutter framework.
+  flutter,
 }

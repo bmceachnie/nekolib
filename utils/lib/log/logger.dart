@@ -27,7 +27,7 @@ class Logger {
       if (kDebugMode) {
         FlutterError.dumpErrorToConsole(details);
       } else {
-        log(details.toString());
+        log(details.toString(), LogTypes.flutter);
       }
     };
 
@@ -53,7 +53,7 @@ class Logger {
   /// Logs the given [msg].
   /// If in [kDebugMode] the [msg] is logged to the console.
   /// If [autoSave] is true, the log is saved to the file.
-  static Future log(String msg, {LogTypes type = LogTypes.debug}) async {
+  static Future log(String msg, [LogTypes type = LogTypes.debug]) async {
     assert(_isInitialized, "Logger is not initialized.");
     var entry = LogEntry(message: msg, type: type, date: DateTime.now());
 
@@ -82,4 +82,4 @@ class Logger {
 }
 
 /// Logs the given [msg].
-void log(Object msg, {LogTypes type = LogTypes.debug}) => Logger.log(msg.toString(), type: type);
+void log(Object msg, [LogTypes type = LogTypes.debug]) => Logger.log(msg.toString(), type);
