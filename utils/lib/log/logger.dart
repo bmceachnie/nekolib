@@ -58,7 +58,7 @@ class Logger {
     var entry = LogEntry(message: msg, type: type, date: DateTime.now());
 
     if (kDebugMode) {
-      print(msg);
+      print(entry.toString());
     } else if (_autoSave) {
       var f = await logFile;
       f.writeAsStringSync(entry.toString(), mode: FileMode.append);
