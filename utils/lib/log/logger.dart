@@ -13,9 +13,11 @@ class Logger {
   /// [autoSave] is a flag that determines whether the log file is automatically saved.
   /// If [autoSave] is true, the given [appStoragePath] has to be not null and must exist.
   static void init({bool autoSave = false, String? appStoragePath}) {
-    assert(autoSave && appStoragePath != null && Directory(appStoragePath).existsSync());
+    if (autoSave) {
+      assert(appStoragePath != null && Directory(appStoragePath).existsSync());
+    }
 
-    _appStoragePath = appStoragePath!;
+    _appStoragePath = appStoragePath ?? "";
     _autoSave = autoSave;
 
     FlutterError.onError = (FlutterErrorDetails details) {
