@@ -1,4 +1,4 @@
-part of animations;
+part of utils;
 
 /// A builder to adapt to the widget being hoverd or not.
 class HoverBuilder extends HoverableWidget {

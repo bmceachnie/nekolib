@@ -1,4 +1,4 @@
-part of animations;
+part of utils;
 
 /// Base class for all [HoverableWidget]s.
 abstract class HoverableWidget extends StatefulWidget {

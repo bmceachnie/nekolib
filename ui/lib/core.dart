@@ -1,13 +1,12 @@
 /// Contains everything needed for the UI kit that is the same for all platforms.
 library core;
 
-export 'animations.dart';
-
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:rxdart/subjects.dart';
 
 part 'core/app.dart';
@@ -20,3 +19,4 @@ part 'core/text/base_text.dart';
 part 'core/text/caption_text.dart';
 part 'core/text/title_text.dart';
 part 'core/text/body_text.dart';
+part 'core/logo.dart';
