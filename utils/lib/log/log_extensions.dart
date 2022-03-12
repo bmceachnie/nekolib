@@ -20,5 +20,7 @@ extension LogTypeEmojis on LogTypes {
                   ? '✅'
                   : this == LogTypes.debug
                       ? '🐞'
-                      : '🔥';
+                      : this == LogTypes.tracking
+                          ? '📈'
+                          : '🔥';
 }

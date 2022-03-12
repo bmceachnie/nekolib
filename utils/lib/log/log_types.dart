@@ -19,4 +19,7 @@ enum LogTypes {
 
   /// Log message for a critical error, which could cause the application to crash.
   fatal,
+
+  /// Log message. which provides tracking of wich methods were called and what the user was doing.
+  tracking,
 }
