@@ -8,13 +8,11 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  cross_connectivity: ^3.0.5
-  dio: ^4.0.4
   enum_to_string: ^2.0.1
   flutter:
     sdk: flutter
-  http: ^0.13.4
   intl: ^0.17.0
+  rxdart: ^0.27.3
 
 dev_dependencies:
   flutter_test:
