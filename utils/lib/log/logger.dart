@@ -10,6 +10,11 @@ class Logger {
 
   static bool _isInitialized = false;
 
+  /// Ensures that the logger is initialized.
+  static void _ensureInitialized() {
+    assert(_isInitialized, "Logger is not initialized.");
+  }
+
   /// Inintializes the logger.
   /// [appStoragePath] is the path to the directory where app files are stored.
   /// [autoSave] is a flag that determines whether the log file is automatically saved.
@@ -51,10 +56,10 @@ class Logger {
   static final logFileName = "session_${DateTime.now().logFormat}.log";
 
   /// Logs the given [msg].
+  /// [type] is the type of the log (defaults to [LogTypes.debug]).
   /// If in [kDebugMode] the [msg] is logged to the console.
   /// If [autoSave] is true, the log is saved to the file.
   static Future log(String msg, [LogTypes type = LogTypes.debug]) async {
-    assert(_isInitialized, "Logger is not initialized.");
     var entry = LogEntry(message: msg, type: type, date: DateTime.now());
 
     if (kDebugMode) {
@@ -69,17 +74,17 @@ class Logger {
 
   /// Returns the directory where the logs are saved.
   static Future<Directory> get logDir async {
-    assert(_isInitialized, "Logger is not initialized.");
+    _ensureInitialized();
     return Directory("$_appStoragePath/logs").create();
   }
 
   /// Returns the log file.
   static Future<File> get logFile async {
-    assert(_isInitialized, "Logger is not initialized.");
+    _ensureInitialized();
     var dir = await logDir;
     return File('${dir.path}/$logFileName');
   }
 }
 
-/// Logs the given [msg].
+/// Logs the given [msg] with the given [type].
 void log(Object msg, [LogTypes type = LogTypes.debug]) => Logger.log(msg.toString(), type);
