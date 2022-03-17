@@ -2,13 +2,16 @@ part of utils;
 
 /// Base class for all [HoverableWidget]s.
 abstract class HoverableWidget extends StatefulWidget {
-  const HoverableWidget({Key? key, required this.cursor}) : super(key: key);
+  HoverableWidget({Key? key, required this.cursor, required this.onTap}) : super(key: key);
 
   /// The cursor to use when the widget is hovered.
   final MouseCursor cursor;
 
   /// Override this method to build the widget based if the user [isHovering] or not.
   Widget build(BuildContext context, bool isHovering);
+
+  /// Called when the user taps the widget.
+  final VoidCallback? onTap;
 
   @override
   State<HoverableWidget> createState() => _HoverableWidgetState();
