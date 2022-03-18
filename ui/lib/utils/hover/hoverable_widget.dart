@@ -36,11 +36,14 @@ class _HoverableWidgetState extends State<HoverableWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: widget.cursor,
-      onEnter: _onEnter,
-      onExit: _onExit,
-      child: widget.build(context, _isHovering),
+    return GestureDetector(
+      onTap: widget.onTap,
+      child: MouseRegion(
+        cursor: widget.cursor,
+        onEnter: _onEnter,
+        onExit: _onExit,
+        child: widget.build(context, _isHovering),
+      ),
     );
   }
 }
