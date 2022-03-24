@@ -43,7 +43,7 @@ class NcApp extends StatelessWidget {
 /// Wrapping with [NcApp] will automatically rebuild the app when [NcThemes.current] changes.
 /// If [onLoad] is set, it will be called when the app is first built.
 /// While waiting for the app to load, [loadingWidgetBuilder] will be used.
-void runThemedApp({required WidgetBuilder appBuilder, Future Function()? onLoad, WidgetBuilder? loadingWidgetBuilder}) {
+void runThemedApp({required WidgetBuilder appBuilder, Future? onLoad, WidgetBuilder? loadingWidgetBuilder}) {
   NcThemes.initPredefinedThemes();
 
   runApp(NcApp(builder: appBuilder, loadingWidgetBuilder: loadingWidgetBuilder, onLoad: onLoad));
