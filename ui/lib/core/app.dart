@@ -21,14 +21,14 @@ class NcApp extends StatelessWidget {
 
   /// This is only called once, before the app is built.
   /// While waiting for the app to load, the [loadingWidgetBuilder] is used, therefore it mus not be null if [onLoad] is set.
-  final Future Function()? onLoad;
+  final Future? onLoad;
 
   @override
   Widget build(BuildContext context) {
     return ConditionalWrapper(
       condition: onLoad != null,
       wrapper: (context, app) => FutureBuilder(
-        future: onLoad!(),
+        future: onLoad,
         builder: (context, snapshot) => snapshot.connectionState.isDone ? app : loadingWidgetBuilder!.call(context),
       ),
       child: StreamBuilder<NcTheme>(
