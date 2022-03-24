@@ -2,6 +2,7 @@ part of utils;
 
 /// Transforms the child to the given [transform] when hovered.
 class TransformOnHover extends HoverableWidget {
+  /// Transforms the given [child] to the given [transform] when hovered.
   TransformOnHover({
     Key? key,
     required this.duration,

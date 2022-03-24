@@ -1,6 +1,8 @@
 part of core;
 
+/// Used to display a themed text with [FontWeight.bold].
 class NcTitleText extends NcBaseText {
+  /// Used to display a themed text with [FontWeight.bold].
   NcTitleText(
     String text, {
     Key? key,

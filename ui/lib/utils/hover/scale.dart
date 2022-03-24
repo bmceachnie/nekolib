@@ -2,6 +2,7 @@ part of utils;
 
 /// Scales the child to the given [scale] when hovered.
 class ScaleOnHover extends HoverableWidget {
+  /// Scales the given [child] to the given [scale] when hovered.
   ScaleOnHover({
     Key? key,
     required this.duration,

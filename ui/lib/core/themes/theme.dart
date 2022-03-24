@@ -42,7 +42,7 @@ class NcTheme {
     this.successColor = defaultSuccessColor,
     required this.icon,
     required this.iconColor,
-  }) : this.buttonTextColor = buttonTextColor ?? textColor;
+  }) : buttonTextColor = buttonTextColor ?? textColor;
 
   /// Creates a copy of this theme with a new given name and new given properties. If a property is not set, it will be inherited from the original theme.
   /// The new theme will be registered in the database automatically.
@@ -88,7 +88,7 @@ class NcTheme {
     required IconData icon,
     required Color iconColor,
   }) {
-    return new NcTheme(
+    return NcTheme(
       name,
       primaryColor: primaryColor ?? this.primaryColor,
       secondaryColor: secondaryColor ?? this.secondaryColor,
@@ -145,14 +145,14 @@ class NcTheme {
   final String name;
 
   /// The default success color.
-  static const Color defaultSuccessColor = const Color(0xFF4FB930);
+  static const Color defaultSuccessColor = Color(0xFF4FB930);
 
   /// The default warning color.
-  static const Color defaultWarningColor = const Color(0xFFF1C40F);
+  static const Color defaultWarningColor = Color(0xFFF1C40F);
 
   /// The default error color.
-  static const Color defaultErrorColor = const Color(0xFFE74C3C);
+  static const Color defaultErrorColor = Color(0xFFE74C3C);
 
   /// The default neutral color.
-  static const Color defaultNeutralColor = const Color(0xFF7F8C8D);
+  static const Color defaultNeutralColor = Color(0xFF7F8C8D);
 }

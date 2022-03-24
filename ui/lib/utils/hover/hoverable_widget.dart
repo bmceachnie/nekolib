@@ -2,6 +2,7 @@ part of utils;
 
 /// Base class for all [HoverableWidget]s.
 abstract class HoverableWidget extends StatefulWidget {
+  /// Base class for all [HoverableWidget]s.
   HoverableWidget({Key? key, required this.cursor, required this.onTap}) : super(key: key);
 
   /// The cursor to use when the widget is hovered.
@@ -48,4 +49,5 @@ class _HoverableWidgetState extends State<HoverableWidget> {
   }
 }
 
+/// The default cursor used when hovering over a widget.
 const kDefaultHoverCursor = SystemMouseCursors.click;

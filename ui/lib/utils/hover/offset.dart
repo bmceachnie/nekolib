@@ -2,6 +2,7 @@ part of utils;
 
 /// Offsets the child to the given [offset] when hovered.
 class OffsetOnHover extends HoverableWidget {
+  /// Offsets the given [child] to the given [offset] when hovered.
   OffsetOnHover({
     Key? key,
     required this.duration,

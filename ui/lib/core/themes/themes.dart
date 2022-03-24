@@ -29,7 +29,7 @@ class NcThemes {
   static Stream<NcTheme> get onCurrentThemeChanged => _themeNotfier.stream;
 
   /// Contains all themes.
-  static Map<String, NcTheme> _all = {};
+  static final Map<String, NcTheme> _all = {};
 
   /// Contains all themes with their corresponding names as key.
   static Map<String, NcTheme> get all => Map.unmodifiable(_all);

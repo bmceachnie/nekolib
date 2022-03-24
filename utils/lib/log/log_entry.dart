@@ -11,8 +11,10 @@ class LogEntry {
   /// The type of the log.
   final LogTypes type;
 
+  /// Creates a new log entry with the given [message] and [type].
   LogEntry({required this.message, required this.date, required this.type});
 
+  /// Creates a new empty log entry.
   LogEntry.empty() : this(message: '', date: DateTime.now(), type: LogTypes.info);
 
   @override

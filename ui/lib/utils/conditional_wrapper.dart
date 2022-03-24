@@ -3,6 +3,8 @@ part of utils;
 /// Wraps the given [child] with the given [wrapper] if the given [condition] is true.
 /// Also provides an optional [falseWrapper] if the given [condition] is false.
 class ConditionalWrapper extends StatelessWidget {
+  /// Wraps the given [child] with the given [wrapper] if the given [condition] is true.
+  /// Also provides an optional [falseWrapper] if the given [condition] is false.
   const ConditionalWrapper({Key? key, required this.condition, required this.child, required this.wrapper, this.falseWrapper}) : super(key: key);
 
   /// The condition to check.

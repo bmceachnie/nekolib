@@ -13,16 +13,20 @@ class ThemeableProperty<T> {
   ThemeableProperty.all(T value) {
     var allValues = <NcTheme, T>{};
 
-    for (var theme in NcThemes.all.values) allValues[theme] = value;
+    for (var theme in NcThemes.all.values) {
+      allValues[theme] = value;
+    }
 
-    this.values = Map.unmodifiable(allValues);
+    values = Map.unmodifiable(allValues);
   }
 
   /// Creates a new [ThemeableProperty] with a given Map and inserts a [T] value for all undefined [NcTheme] in [NcThemes.all].
   ThemeableProperty.only(T defaultValue, Map<NcTheme, T> values) {
     var allValues = <NcTheme, T>{};
 
-    for (var theme in NcThemes.all.values) allValues[theme] = values[theme] ?? defaultValue;
+    for (var theme in NcThemes.all.values) {
+      allValues[theme] = values[theme] ?? defaultValue;
+    }
 
     this.values = Map.unmodifiable(allValues);
   }
