@@ -29,7 +29,7 @@ class NcApp extends StatelessWidget {
       condition: onLoad != null,
       wrapper: (context, app) => FutureBuilder(
         future: onLoad!(),
-        builder: (context, snapshot) => snapshot.connectionState.isWaiting ? app : loadingWidgetBuilder!.call(context),
+        builder: (context, snapshot) => snapshot.connectionState.isDone ? app : loadingWidgetBuilder!.call(context),
       ),
       child: StreamBuilder<NcTheme>(
         stream: NcThemes.onCurrentThemeChanged,
