@@ -2,6 +2,8 @@ part of core;
 
 /// Database of all themes.
 class NcThemes {
+  static bool _hasInit = false;
+
   /// The current active theme.
   /// Defaults to [lightTheme].
   static NcTheme _current = lightTheme;
@@ -45,10 +47,14 @@ class NcThemes {
   /// Ensures that all predefined themes are registered.
   /// This method is called automatically when using [runThemedApp].
   static void initPredefinedThemes() {
+    if (_hasInit) return;
+
     registerTheme(lightTheme);
     registerTheme(darkTheme);
     registerTheme(oceanTheme);
     registerTheme(sakuraTheme);
+
+    _hasInit = true;
   }
 }
 
