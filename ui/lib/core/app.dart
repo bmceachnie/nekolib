@@ -47,24 +47,22 @@ class NcApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConditionalWrapper(
-      condition: title != null && appIcon != null,
-      wrapper: (context, child) {
-        return WindowHandle(
+    return StreamBuilder<NcTheme>(
+      stream: NcThemes.onCurrentThemeChanged,
+      builder: (context, snapshot) => ConditionalWrapper(
+        condition: title != null && appIcon != null,
+        wrapper: (context, child) => WindowHandle(
           child: child,
           appIcon: appIcon!,
           title: title!,
-        );
-      },
-      child: ConditionalWrapper(
-        condition: onLoad != null,
-        wrapper: (context, app) => FutureBuilder(
-          future: onLoad,
-          builder: (context, snapshot) => snapshot.connectionState.isDone ? app : loadingWidgetBuilder!.call(context),
         ),
-        child: StreamBuilder<NcTheme>(
-          stream: NcThemes.onCurrentThemeChanged,
-          builder: (context, _) => builder(context),
+        child: ConditionalWrapper(
+          condition: onLoad != null,
+          wrapper: (context, app) => FutureBuilder(
+            future: onLoad,
+            builder: (context, snapshot) => snapshot.connectionState.isDone ? app : loadingWidgetBuilder!.call(context),
+          ),
+          child: builder(context),
         ),
       ),
     );

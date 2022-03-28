@@ -15,7 +15,7 @@ part of core;
 class WindowHandle extends StatelessWidget {
   /// Wrapper for a themed window bar.
   /// Using [bitsdojo_window](https://pub.dev/packages/bitsdojo_window).
-  const WindowHandle({Key? key, required this.child, required this.appIcon, required this.title}) : super(key: key);
+  WindowHandle({Key? key, required this.child, required this.appIcon, required this.title}) : super(key: key);
 
   /// The child widget.
   final Widget child;
