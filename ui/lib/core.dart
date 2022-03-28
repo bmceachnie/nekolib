@@ -22,3 +22,4 @@ part 'core/text/caption_text.dart';
 part 'core/text/title_text.dart';
 part 'core/text/body_text.dart';
 part 'core/logo.dart';
+part 'core/window_handle.dart';
