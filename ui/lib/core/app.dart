@@ -83,10 +83,10 @@ class NcApp extends StatelessWidget {
 /// ```
 /// - For macOS follow these [steps for macOS](https://github.com/bitsdojo/bitsdojo_window#for-macos-apps).
 /// - For Linux follow these [steps for Linux](https://github.com/bitsdojo/bitsdojo_window#for-linux-apps).
-void runThemedApp({required WidgetBuilder appBuilder, Future? onLoad, WidgetBuilder? loadingWidgetBuilder, String? appIcon, String? title, Size minSize = const Size(800, 600)}) {
+void runThemedApp({required WidgetBuilder appBuilder, Future Function()? onLoad, WidgetBuilder? loadingWidgetBuilder, String? appIcon, String? title, Size minSize = const Size(800, 600)}) {
   NcThemes.initPredefinedThemes();
 
-  runApp(NcApp(builder: appBuilder, loadingWidgetBuilder: loadingWidgetBuilder, onLoad: onLoad, appIcon: appIcon, title: title));
+  runApp(NcApp(builder: appBuilder, loadingWidgetBuilder: loadingWidgetBuilder, onLoad: onLoad?.call(), appIcon: appIcon, title: title));
 
   doWhenWindowReady(() {
     appWindow
