@@ -46,41 +46,44 @@ class WindowHandle extends StatelessWidget {
       mouseDown: errorColor,
     );
 
-    return Column(
-      children: [
-        WindowTitleBarBox(
-          child: Container(
-            color: secondaryColor,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                NcSpacing.small(),
-                NcVectorImage(
-                  code: appIcon,
-                  width: 18,
-                  height: 18,
-                ),
-                NcSpacing.xs(),
-                Expanded(
-                  child: MoveWindow(
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: NcCaptionText(
-                        title,
-                        fontSize: 12,
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Column(
+        children: [
+          WindowTitleBarBox(
+            child: Container(
+              color: secondaryColor,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  NcSpacing.small(),
+                  NcVectorImage(
+                    code: appIcon,
+                    width: 18,
+                    height: 18,
+                  ),
+                  NcSpacing.xs(),
+                  Expanded(
+                    child: MoveWindow(
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: NcCaptionText(
+                          title,
+                          fontSize: 12,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                MinimizeWindowButton(colors: defaultColors),
-                MaximizeWindowButton(colors: defaultColors),
-                CloseWindowButton(colors: closeColors),
-              ],
+                  MinimizeWindowButton(colors: defaultColors),
+                  MaximizeWindowButton(colors: defaultColors),
+                  CloseWindowButton(colors: closeColors),
+                ],
+              ),
             ),
           ),
-        ),
-        Expanded(child: child),
-      ],
+          Expanded(child: child),
+        ],
+      ),
     );
   }
 }
