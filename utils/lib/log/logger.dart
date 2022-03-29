@@ -57,10 +57,11 @@ class Logger {
 
   /// Logs the given [msg].
   /// [type] is the type of the log (defaults to [LogTypes.debug]).
+  /// [group] is the group of the log (empty by default).
   /// If in [kDebugMode] the [msg] is logged to the console.
   /// If [autoSave] is true, the log is saved to the file.
-  static Future log(String msg, [LogTypes type = LogTypes.debug]) async {
-    var entry = LogEntry(message: msg, type: type, date: DateTime.now());
+  static Future log(String msg, [LogTypes type = LogTypes.debug, String group = ""]) async {
+    var entry = LogEntry(message: msg, type: type, date: DateTime.now(), group: group);
 
     if (kDebugMode) {
       print(entry.toString());
@@ -86,5 +87,9 @@ class Logger {
   }
 }
 
-/// Logs the given [msg] with the given [type].
-void log(Object msg, [LogTypes type = LogTypes.debug]) => Logger.log(msg.toString(), type);
+/// Logs the given [msg].
+/// [type] is the type of the log (defaults to [LogTypes.debug]).
+/// [group] is the group of the log (empty by default).
+/// If in [kDebugMode] the [msg] is logged to the console.
+/// If [autoSave] is true, the log is saved to the file.
+void log(Object msg, [LogTypes type = LogTypes.debug, String group = ""]) => Logger.log(msg.toString(), type, group);
