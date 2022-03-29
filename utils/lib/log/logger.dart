@@ -36,7 +36,6 @@ class Logger {
       }
     };
 
-    logStream.listen(_logs.add);
     _isInitialized = true;
   }
 
@@ -71,6 +70,7 @@ class Logger {
     }
 
     _logNotifier.sink.add(entry);
+    _logs.add(entry);
   }
 
   /// Returns the directory where the logs are saved.
