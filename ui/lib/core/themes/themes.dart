@@ -17,7 +17,7 @@ class NcThemes {
   static void setTheme(NcTheme theme, {bool force = false}) {
     if (theme == _current && !force) return;
 
-    log('[NcThemes] setTheme: ${theme.name}', LogTypes.tracking);
+    log(theme.name, LogTypes.tracking);
 
     _current = theme;
     _themeNotfier.sink.add(theme);

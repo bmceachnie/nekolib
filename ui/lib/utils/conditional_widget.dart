@@ -11,11 +11,11 @@ class ConditionalWidget extends StatelessWidget {
   final bool condition;
 
   /// The widget to show if the condition is true.
-  final Widget trueWidget;
+  final WidgetBuilder trueWidget;
 
   /// The widget to show if the condition is false.
-  final Widget falseWidget;
+  final WidgetBuilder falseWidget;
 
   @override
-  Widget build(BuildContext context) => condition ? trueWidget : falseWidget;
+  Widget build(BuildContext context) => condition ? trueWidget(context) : falseWidget(context);
 }
