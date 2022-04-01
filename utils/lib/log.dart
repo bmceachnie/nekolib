@@ -11,3 +11,4 @@ part 'log/logger.dart';
 part 'log/log_entry.dart';
 part 'log/log_extensions.dart';
 part 'log/log_types.dart';
+part 'log/log_group.dart';
