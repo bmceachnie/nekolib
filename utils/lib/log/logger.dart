@@ -56,11 +56,13 @@ class Logger {
 
   /// Logs the given [msg].
   /// [type] is the type of the log (defaults to [LogTypes.debug]).
-  /// [group] is the group of the log (empty by default).
   /// If in [kDebugMode] the [msg] is logged to the console.
   /// If [autoSave] is true, the log is saved to the file.
-  static Future log(String msg, [LogTypes type = LogTypes.debug, String group = ""]) async {
-    var entry = LogEntry(message: msg, type: type, date: DateTime.now(), group: group);
+  static Future log(String msg, [LogTypes type = LogTypes.debug]) async {
+    var stack = StackTrace.current.toString().split("\n")[2].replaceAll("      ", " ");
+    var method = stack.split(" ")[1];
+
+    var entry = LogEntry(message: msg, type: type, date: DateTime.now(), group: method);
 
     if (kDebugMode) {
       print(entry.toString());
@@ -89,7 +91,6 @@ class Logger {
 
 /// Logs the given [msg].
 /// [type] is the type of the log (defaults to [LogTypes.debug]).
-/// [group] is the group of the log (empty by default).
 /// If in [kDebugMode] the [msg] is logged to the console.
 /// If [autoSave] is true, the log is saved to the file.
-void log(Object msg, [LogTypes type = LogTypes.debug, String group = ""]) => Logger.log(msg.toString(), type, group);
+void log(Object msg, [LogTypes type = LogTypes.debug]) => Logger.log(msg.toString(), type);
