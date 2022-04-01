@@ -92,4 +92,4 @@ class Logger {
 /// [group] is the group of the log (empty by default).
 /// If in [kDebugMode] the [msg] is logged to the console.
 /// If [autoSave] is true, the log is saved to the file.
-void log(Object msg, String group, [LogTypes type = LogTypes.debug]) => Logger.log(msg.toString(), type, group);
+void log(Object msg, [LogTypes type = LogTypes.debug, String group = ""]) => Logger.log(msg.toString(), type, group);
