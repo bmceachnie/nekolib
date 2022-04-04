@@ -59,10 +59,7 @@ class Logger {
   /// If in [kDebugMode] the [msg] is logged to the console.
   /// If [autoSave] is true, the log is saved to the file.
   static Future log(String msg, [LogTypes type = LogTypes.debug]) async {
-    var stack = StackTrace.current.toString().split("\n")[2].replaceAll("      ", " ");
-    var method = stack.split(" ")[1];
-
-    var entry = LogEntry(message: msg, type: type, date: DateTime.now(), group: method);
+    var entry = LogEntry(message: msg, type: type, date: DateTime.now(), group: StackTrace.current.method);
 
     if (kDebugMode) {
       print(entry.toString());
