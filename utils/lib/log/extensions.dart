@@ -6,7 +6,7 @@ extension LoggerExtensions on StackTrace {
   /// Format: "$method:$lineNumber:$charNumber"
   String get method {
     var line = StackTrace.current.toString().toString().split("\n")[3];
-    line = line.replaceAll("#3      ", "replace");
+    line = line.replaceAll("#3      ", "");
 
     var file = line.split(" ").last;
     var method = line.split(" (").first;
