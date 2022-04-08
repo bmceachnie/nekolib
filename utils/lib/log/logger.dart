@@ -21,6 +21,7 @@ class Logger {
   /// If [autoSave] is true, the given [appStoragePath] has to be not null and must exist.
   static void init({bool autoSave = false, String? appStoragePath}) {
     assert(!_isInitialized, "Logger is already initialized.");
+
     if (autoSave) {
       assert(appStoragePath != null && Directory(appStoragePath).existsSync(), "The given app storage path does not exist.");
     }
@@ -32,7 +33,7 @@ class Logger {
       if (kDebugMode) {
         FlutterError.dumpErrorToConsole(details);
       } else {
-        log(details.toString(), LogTypes.flutter);
+        log(details.exception.toString(), LogTypes.flutter);
       }
     };
 
