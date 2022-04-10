@@ -56,13 +56,16 @@ class NcApp extends StatelessWidget {
           appIcon: appIcon!,
           title: title!,
         ),
-        child: ConditionalWrapper(
-          condition: onLoad != null,
-          wrapper: (context, app) => FutureBuilder(
-            future: onLoad,
-            builder: (context, snapshot) => snapshot.connectionState.isDone ? app : loadingWidgetBuilder!.call(context),
+        child: Container(
+          color: secondaryColor,
+          child: ConditionalWrapper(
+            condition: onLoad != null,
+            wrapper: (context, app) => FutureBuilder(
+              future: onLoad,
+              builder: (context, snapshot) => snapshot.connectionState.isDone ? app : loadingWidgetBuilder!.call(context),
+            ),
+            child: builder(context),
           ),
-          child: builder(context),
         ),
       ),
     );
