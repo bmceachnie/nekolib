@@ -1,30 +1,105 @@
-part of update;
+part of updater;
 
 /// Updater using github releases.
-class GitHubUpdater implements IUpdater {
-  GitHubUpdater({required String currentVersion}) : super();
+abstract class GitHubUpdater implements IUpdater {
+  /// Updater using github releases.
+  @mustCallSuper
+  GitHubUpdater() : super();
 
-  @override
+  /// The API endpoint for the github repository apis.
+  static const githubApiUrl = 'https://api.github.com/repos';
+
+  /// The name of the github repository where the app is hosted on.
+  String get repo;
+
+  /// The owner of the github [repo].
+  String get repoOwner;
+
+  /// The name of the installer file that is downloaded if [Platform.isWindows].
+  String get windowsFileName;
+
+  /// The name of the installer file that is downloaded if [Platform.isMacOS].
+  String get macFileName;
+
+  /// The name of the installer file that is downloaded if [Platform.isLinux].
+  String get linuxFileName;
+
+  String _latestVersion = "";
+  String _latestReleaseName = "";
+  String _setupDownloadUrl = "";
+
+  /// The url to use for the api call.
+  String get repoUrl => "$githubApiUrl/$repoOwner/$repo";
+
+  /// The latest version of the app.
+  @nonVirtual
+  String get latestVersion => _latestVersion;
+
+  /// The latest release name of the app.
+  @nonVirtual
+  String get latestVersionName => _latestReleaseName;
+
+  /// The url to download the latest installer from.
+  @nonVirtual
+  String get setupDownloadUrl => _setupDownloadUrl;
+
   bool _updateAvailable = false;
 
   @override
-  // TODO: implement appName
-  String get appName => throw UnimplementedError();
+  @nonVirtual
+  bool get updateAvailable => _updateAvailable;
 
+  @nonVirtual
   @override
-  // TODO: implement currentVersion
-  String get currentVersion => throw UnimplementedError();
+  Future<bool> update() async {
+    if (!await connectivity.checkConnection()) {
+      error("Could not check for updates, you may be using an outadet version! Please check your internet connection");
+      return _updateAvailable = false;
+    }
 
-  @override
-  Future<bool> update() {
-    // TODO: implement update
-    throw UnimplementedError();
+    var client = Client();
+
+    try {
+      var fileName = Platform.isWindows
+          ? windowsFileName
+          : Platform.isMacOS
+              ? macFileName
+              : linuxFileName;
+
+      var response = await client.get(Uri.parse("$repoUrl/releases/latest"));
+      var json = jsonDecode(response.body);
+      _latestVersion = json["tag_name"];
+      _latestReleaseName = json["name"];
+
+      var asset = json["assets"].firstWhere((asset) => asset["name"] == fileName);
+      _setupDownloadUrl = asset["browser_download_url"];
+
+      return _updateAvailable = latestVersion != currentVersion;
+    } catch (e) {
+      error("Error checking for upates: $e! If this error persists, please let us know by opening an issue on GitHub");
+
+      return _updateAvailable = false;
+    }
   }
 
+  @nonVirtual
   @override
-  Future<bool> upgrade(Function(int int) onProgress) {
-    // TODO: implement upgrade
-    throw UnimplementedError();
+  Future<bool> upgrade(void Function(int, int) onProgress) async {
+    var dio = Dio();
+    var path = "${Directory.systemTemp.path}/$appName - $latestVersionName Setup.exe";
+    await dio.download(_setupDownloadUrl, path, onReceiveProgress: onProgress);
+
+    var f = File(path);
+
+    if (await f.exists()) {
+      await Process.run(f.path, []);
+
+      exit(0);
+    }
+
+    error("Could not download the installer!");
+
+    return false;
   }
 
   // static final connectivity = Connectivity();
