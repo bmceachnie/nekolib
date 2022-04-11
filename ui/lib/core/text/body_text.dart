@@ -1,6 +1,8 @@
 part of core;
 
+/// Used to display a themed text with [FontWeight.normal].
 class NcBodyText extends NcBaseText {
+  /// Used to display a themed text with [FontWeight.normal].
   NcBodyText(
     String text, {
     Key? key,

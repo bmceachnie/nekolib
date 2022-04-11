@@ -2,7 +2,17 @@ part of utils;
 
 /// Offsets the child to the given [offset] when hovered.
 class OffsetOnHover extends HoverableWidget {
-  OffsetOnHover({Key? key, required this.duration, this.curve = Curves.linear, this.alignment = Alignment.center, required this.offset, required this.child, MouseCursor cursor = kDefaultHoverCursor}) : super(key: key, cursor: cursor);
+  /// Offsets the given [child] to the given [offset] when hovered.
+  OffsetOnHover({
+    Key? key,
+    required this.duration,
+    this.curve = Curves.linear,
+    this.alignment = Alignment.center,
+    required this.offset,
+    required this.child,
+    MouseCursor cursor = kDefaultHoverCursor,
+    VoidCallback? onTap,
+  }) : super(key: key, cursor: cursor, onTap: onTap);
 
   /// The duration of the animation.
   final Duration duration;

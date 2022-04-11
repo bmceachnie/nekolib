@@ -2,6 +2,7 @@ part of core;
 
 /// Logo of [necodeIT](https://github.com/necodeIT), the creators of this [library](https://github.com/necodeIT/nekolib/tree/flutter).
 class NcLogo extends StatelessWidget {
+  /// Logo of [necodeIT](https://github.com/necodeIT), the creators of this [library](https://github.com/necodeIT/nekolib/tree/flutter).
   NcLogo({Key? key, this.fontSize = 55, this.width, this.height, this.subtitleFontSize}) : super(key: key);
 
   /// The size of the logo.

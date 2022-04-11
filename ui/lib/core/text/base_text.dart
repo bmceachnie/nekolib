@@ -2,6 +2,7 @@ part of core;
 
 /// Base class for every themed text.
 class NcBaseText extends StatelessWidget {
+  /// Base class for every themed text.
   NcBaseText(this.text, this.fontWeight, Key? key, this.fontSize, this.buttonText, this.overflow, this.textAlign, this.selectable, this.color) : super(key: key);
 
   /// The text to display.

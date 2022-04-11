@@ -1,6 +1,8 @@
 part of core;
 
+/// Used to display a themed text with [FontWeight.w600].
 class NcCaptionText extends NcBaseText {
+  /// Used to display a themed text with [FontWeight.w600].
   NcCaptionText(
     String text, {
     Key? key,

@@ -2,7 +2,17 @@ part of utils;
 
 /// Transforms the child to the given [transform] when hovered.
 class TransformOnHover extends HoverableWidget {
-  TransformOnHover({Key? key, required this.duration, this.curve = Curves.linear, this.alignment = Alignment.center, required this.transform, required this.child, MouseCursor cursor = kDefaultHoverCursor}) : super(key: key, cursor: cursor);
+  /// Transforms the given [child] to the given [transform] when hovered.
+  TransformOnHover({
+    Key? key,
+    required this.duration,
+    this.curve = Curves.linear,
+    this.alignment = Alignment.center,
+    required this.transform,
+    required this.child,
+    MouseCursor cursor = kDefaultHoverCursor,
+    VoidCallback? onTap,
+  }) : super(key: key, cursor: cursor, onTap: onTap);
 
   /// The duration of the animation.
   final Duration duration;

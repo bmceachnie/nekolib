@@ -2,6 +2,8 @@ part of core;
 
 /// Database of all themes.
 class NcThemes {
+  static bool _hasInit = false;
+
   /// The current active theme.
   /// Defaults to [lightTheme].
   static NcTheme _current = lightTheme;
@@ -15,7 +17,7 @@ class NcThemes {
   static void setTheme(NcTheme theme, {bool force = false}) {
     if (theme == _current && !force) return;
 
-    print('[NcThemes] setTheme: ${theme.name}');
+    log(theme.name, LogTypes.tracking);
 
     _current = theme;
     _themeNotfier.sink.add(theme);
@@ -23,13 +25,13 @@ class NcThemes {
 
   /// Stream to notify listeners when the current theme changes.
   // ignore: close_sinks
-  static StreamController<NcTheme> _themeNotfier = BehaviorSubject.seeded(lightTheme);
+  static final StreamController<NcTheme> _themeNotfier = BehaviorSubject.seeded(lightTheme);
 
   /// Emmits the new [NcTheme] when [setTheme] is used and the current theme changes.
   static Stream<NcTheme> get onCurrentThemeChanged => _themeNotfier.stream;
 
   /// Contains all themes.
-  static Map<String, NcTheme> _all = {};
+  static final Map<String, NcTheme> _all = {};
 
   /// Contains all themes with their corresponding names as key.
   static Map<String, NcTheme> get all => Map.unmodifiable(_all);
@@ -45,12 +47,20 @@ class NcThemes {
   /// Ensures that all predefined themes are registered.
   /// This method is called automatically when using [runThemedApp].
   static void initPredefinedThemes() {
+    if (_hasInit) return;
+
     registerTheme(lightTheme);
     registerTheme(darkTheme);
     registerTheme(oceanTheme);
     registerTheme(sakuraTheme);
+
+    _hasInit = true;
   }
 }
+
+/// Sets the current [theme] and calls [onCurrentThemeChanged] the theme changes.
+/// Use [force] in order to force an update of the theme even if it has not changed.
+void setTheme(NcTheme theme, {bool force = false}) => NcThemes.setTheme(theme, force: force);
 
 /// Predefined Light Theme
 final NcTheme lightTheme = NcTheme.predifined(

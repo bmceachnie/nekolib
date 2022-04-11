@@ -2,7 +2,17 @@ part of utils;
 
 /// Scales the child to the given [scale] when hovered.
 class ScaleOnHover extends HoverableWidget {
-  ScaleOnHover({Key? key, required this.duration, this.curve = Curves.linear, this.alignment = Alignment.center, required this.scale, required this.child, MouseCursor cursor = kDefaultHoverCursor}) : super(key: key, cursor: cursor);
+  /// Scales the given [child] to the given [scale] when hovered.
+  ScaleOnHover({
+    Key? key,
+    required this.duration,
+    this.curve = Curves.linear,
+    this.alignment = Alignment.center,
+    required this.scale,
+    required this.child,
+    MouseCursor cursor = kDefaultHoverCursor,
+    VoidCallback? onTap,
+  }) : super(key: key, cursor: cursor, onTap: onTap);
 
   /// The duration of the animation.
   final Duration duration;
